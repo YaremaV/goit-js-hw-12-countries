@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+ 
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  
+}
+
+body{
+  background-image: url('https://www.nicepng.com/png/detail/163-1632488_earth-background-earth.png');
+   background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+
+.title{
+    display: grid;
+    place-items: center;
+    font-size: 50px;
+    margin: 30px;
+    
+    color: #2F4F4F;
+}
+
+.country__title{
+  display: grid;
+    place-items: center;
+    font-size: 40px;
+    
+}
+
+.cards__info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 40px;
+
+}
+
+.cards__items{
+   font-size: 24px;
+margin-right: 60px;
+
+}
+
+.image{
+    border: 2px solid #708090;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input{
+    height: 40px;
+    width: 250px;
+    margin-right: 5px;
+
+    border: 2px solid #2F4F4F;
+    border-radius: 5px;
+}
+
+.countries__list{
+  display: flex;
+ align-items: center;
+ margin-left: 50px;
+  margin-bottom: 5px;
+}
+
+.image__list{
+  border: 1px solid #000;
+  margin-right: 10px;
+}
