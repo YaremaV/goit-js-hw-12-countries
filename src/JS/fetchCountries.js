@@ -41,7 +41,7 @@ function onSearch(evt){
         });
       }
     })
-        .catch(err => alert('Incorrect input! Please try againe'))
+        .catch(err => alert('Incorrect input! Please try again'))
         // .finally(() => {
         //      refs.input.value = '';
         // });
@@ -51,8 +51,8 @@ function onSearch(evt){
 
 
 function renderCountry(country) {
-    const markup = countriesList(country);
-    refs.countryCards.innerHTML = markup;
+    const markupList = countriesList(country);
+    refs.countryCards.innerHTML = markupList;
     deleteError();
 }
 
