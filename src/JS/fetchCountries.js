@@ -41,10 +41,10 @@ function onSearch(evt){
         });
       }
     })
-        .catch(err => console.log(err))
-        .finally(() => {
-             refs.input.value = '';
-        });
+        .catch(err => alert('Incorrect input! Please try againe'))
+        // .finally(() => {
+        //      refs.input.value = '';
+        // });
    
 }
 
