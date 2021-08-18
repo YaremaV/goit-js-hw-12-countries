@@ -17,13 +17,23 @@ const refs = {
 
 }
 
+
 refs.input.addEventListener('input', debounce(onSearch, 1000));
 
 
 function onSearch(evt){
     evt.preventDefault();
     const inputValue = refs.input.value;
-    console.log(inputValue)
+  console.log(inputValue)
+  
+  if (inputValue === '') {
+    try {
+       renderCountriesList().reset
+    console.log('Пустая строка ввода')
+    } catch {
+      alert('Incorrect input! Please try again')
+     }
+  }
     
     API.fetchCountries(inputValue)
         
@@ -58,7 +68,10 @@ function renderCountry(country) {
 
 function renderCountriesList(country) {
   const markup = createList(country);
-    refs.countryCards.innerHTML = markup;
+  refs.countryCards.innerHTML = markup;
+  if (refs.input.value === '') {
+    renderCountriesList.reset()
+  }
     
   deleteError();
 }
