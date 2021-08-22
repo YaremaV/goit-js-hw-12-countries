@@ -17,23 +17,30 @@ const refs = {
 
 }
 
+let inputValue = '';
 
 refs.input.addEventListener('input', debounce(onSearch, 1000));
 
 
 function onSearch(evt){
     evt.preventDefault();
-    const inputValue = refs.input.value;
+  inputValue = evt.target.value;
+  let newInputValue = inputValue.trim();
+
+  if (!newInputValue) {
+   refs.countryCards.innerHTML = '';
+    return;
+  }
   console.log(inputValue)
   
-  if (inputValue === '') {
-    try {
-       renderCountriesList().reset
-    console.log('Пустая строка ввода')
-    } catch {
-      alert('Incorrect input! Please try again')
-     }
-  }
+  // if (inputValue === '') {
+  //   try {
+  //      renderCountriesList().reset
+  //   console.log('Пустая строка ввода')
+  //   } catch {
+  //     alert('Incorrect input! Please try again')
+  //    }
+  // }
     
     API.fetchCountries(inputValue)
         
