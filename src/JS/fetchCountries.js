@@ -30,18 +30,9 @@ function onSearch(evt){
   if (!newInputValue) {
    refs.countryCards.innerHTML = '';
     return;
-  }
+  } 
   console.log(inputValue)
   
-  // if (inputValue === '') {
-  //   try {
-  //      renderCountriesList().reset
-  //   console.log('Пустая строка ввода')
-  //   } catch {
-  //     alert('Incorrect input! Please try again')
-  //    }
-  // }
-    
     API.fetchCountries(inputValue)
         
         .then(response => {
@@ -49,16 +40,22 @@ function onSearch(evt){
         renderCountry(response);
         deleteError();
       } else if (response.length <= 10) {
-          renderCountriesList(response);
-      
-        deleteError();
+         renderCountriesList(response);
+         deleteError();
+      } else if (response.length<1) {
+        error({
+          text: 'Input line is empty, enter query',
+        });
+        
       } else {
         error({
           text: 'Too many matches found. Please enter a more specific query!',
         });
       }
     })
-        .catch(err => alert('Incorrect input! Please try again'))
+        .catch(err => error({
+          text: 'Incorrect input! Please try again'
+        })); 
         // .finally(() => {
         //      refs.input.value = '';
         // });
